@@ -1,7 +1,6 @@
 const socket = io({
   path: "https://video-call-phinph.cleverapps.io/",  
-  transports: ['websocket'],
-  secure: true
+  transports: ['websocket']
 });
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
