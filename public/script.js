@@ -22,8 +22,8 @@ showChat.addEventListener("click", () => {
 const user = prompt("Enter your name");
 
 var peer = new Peer({
-  host: 'https://app-197cf756-7956-4e09-a153-b9a65bbb274a.cleverapps.io',
-  port: 3030,
+  host: 'https://video-call-phinph.cleverapps.io',
+  // port: 3030,
   path: '/peerjs',
   config: {
     'iceServers': [
