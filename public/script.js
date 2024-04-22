@@ -1,4 +1,10 @@
-const socket = io("video-call-phinph.cleverapps.io/wss");
+const socket = io('', {
+  // Send auth token on connection, you will need to DI the Auth service above
+  // 'query': 'token=' + Auth.getToken()
+  path: '/socket.io',
+  transports: ['websocket'],
+  secure: true,
+});
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
 const showChat = document.querySelector("#showChat");
