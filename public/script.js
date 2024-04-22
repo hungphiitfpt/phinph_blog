@@ -1,6 +1,5 @@
-const socket = io({
-  path: "https://video-call-phinph.cleverapps.io/wss/",  
-  transports: ['websocket']
+const socket = io("https://video-call-phinph.cleverapps.io", {
+  transports: ["websocket", "polling"] // use WebSocket first, if available
 });
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
