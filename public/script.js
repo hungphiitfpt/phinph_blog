@@ -1,11 +1,4 @@
-import { io } from "socket.io-client";
-
-const socket = io({
-  transports: ["websocket"],
-  protocols: ["my-protocol-v1"]
-});
-
-
+const socket = io();
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
 const showChat = document.querySelector("#showChat");
