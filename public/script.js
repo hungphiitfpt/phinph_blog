@@ -1,6 +1,29 @@
-const socket = io("https://video-call-phinph.cleverapps.io/", {
-  transports: ["websocket", "polling"] // use WebSocket first, if available
-});
+// Create a WebSocket connection
+const socket = new WebSocket("wss://video-call-phinph.cleverapps.io/");
+
+// WebSocket onopen event handler
+socket.onopen = function(event) {
+  console.log("WebSocket connection established.");
+  // You can send any initial messages or perform actions here
+};
+
+// WebSocket onmessage event handler
+socket.onmessage = function(event) {
+  console.log("Message received:", event.data);
+  // Handle incoming messages here
+};
+
+// WebSocket onerror event handler
+socket.onerror = function(error) {
+  console.error("WebSocket error:", error);
+};
+
+// WebSocket onclose event handler
+socket.onclose = function(event) {
+  console.log("WebSocket connection closed:", event.reason);
+  // You can attempt to reconnect here if necessary
+};
+
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
 const showChat = document.querySelector("#showChat");
