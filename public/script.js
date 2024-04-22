@@ -1,7 +1,12 @@
-const socket = require("socket.io-client")("https://video-call-phinph.cleverapps.io");
-
+var socket = io();
 socket.on("connect_error", (err) => {
   console.log(`connect_error due to ${err.message}`);
+});
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('user disconnected');
+  });
 });
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
