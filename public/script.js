@@ -1,4 +1,4 @@
-const socket = io("https://video-call-phinph.cleverapps.io");
+const socket = io("video-call-phinph.cleverapps.io/wss");
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
 const showChat = document.querySelector("#showChat");
