@@ -1,7 +1,6 @@
-const socket = io( {
-  host: 'video-call-phinph.cleverapps.io',
-  // port: 3030,
-  path: '/socket.io'
+const socket = io.on("connection", (socket) => {
+  const transport = socket.conn.transport;
+  console.log(transport.socket.protocol); // prints "my-protocol-v1"
 });
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
