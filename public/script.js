@@ -1,4 +1,4 @@
-const socket = io.on("connection", (socket) => {
+io.on("connection", (socket) => {
   const transport = socket.conn.transport;
   console.log(transport.socket.protocol); // prints "my-protocol-v1"
 });
