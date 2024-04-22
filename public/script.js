@@ -1,7 +1,8 @@
-const { Server } = require("socket.io");
+const socket = require("socket.io-client")("https://video-call-phinph.cleverapps.io");
 
-const server = http.createServer(app);
-const socket = new Server(server);
+socket.on("connect_error", (err) => {
+  console.log(`connect_error due to ${err.message}`);
+});
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
 const showChat = document.querySelector("#showChat");
