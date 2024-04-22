@@ -22,7 +22,7 @@ showChat.addEventListener("click", () => {
 const user = prompt("Enter your name");
 
 var peer = new Peer({
-  host: 'https://video-call-phinph.cleverapps.io',
+  host: 'video-call-phinph.cleverapps.io',
   // port: 3030,
   path: '/peerjs',
   config: {
